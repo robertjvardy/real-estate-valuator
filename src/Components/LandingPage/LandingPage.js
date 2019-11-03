@@ -3,7 +3,7 @@ import "./LandingPage.css";
 
 const LandingPage = props => (
   <div className="LandingPage">
-    <p>Landing Page</p>
+    <h1>Landing Page</h1>
   </div>
 );
 

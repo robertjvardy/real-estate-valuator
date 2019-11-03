@@ -3,11 +3,16 @@ import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
 import axios from "axios";
 import Styles from "../../Styles";
+import "./Calculator.css";
 
 const Calculator = props => {
   const [value, setValue] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const ResultContainer = () => (
+    <div className="ResultContainer">Estimated Value: {value}</div>
+  );
   return (
-    <div>
+    <div className="Calculator">
       <h1>Calculator</h1>
       <Styles>
         <Form
@@ -15,8 +20,8 @@ const Calculator = props => {
             axios
               .post("http://localhost:5000/api/", { ...values })
               .then(response => {
-                console.log(response.data, props.updateValue);
-                props.updateValue(response.data);
+                setValue(response.data);
+                setSubmitted(true);
               })
               .catch(error => {
                 console.log(error);
@@ -160,6 +165,7 @@ const Calculator = props => {
             </form>
           )}
         />
+        {submitted ? <ResultContainer /> : undefined}
       </Styles>
     </div>
   );
