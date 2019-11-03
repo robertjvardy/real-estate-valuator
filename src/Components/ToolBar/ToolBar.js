@@ -5,7 +5,7 @@ import "./ToolBar.css";
 const ToolBar = () => (
   <header className="ToolBar">
     <p>menu</p>
-    <p>LOGO</p>
+    <p id="Logo">LOGO</p>
     <nav className="NavBar">
       <NavItems />
     </nav>
