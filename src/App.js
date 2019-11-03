@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import Layout from "./Components/Layout/Layout";
-import { Route } from "react-router-dom";
-import Form from "./Components/Form/Form";
+import { Route, Switch } from "react-router-dom";
+import Calculator from "./Components/Calculator/Calculator";
 import LandingPage from "./Components/LandingPage/LandingPage";
 
 const App = () => {
-  const [value, setValue] = useState(0);
   return (
     <div className="App">
       <Layout>
-        <Route path="/calculator" component={Form} />
-        <Route path="/" component={LandingPage} />
+        <Switch>
+          <Route path="/calculator" component={Calculator} />
+          <Route path="/" component={LandingPage} />
+        </Switch>
       </Layout>
     </div>
   );
