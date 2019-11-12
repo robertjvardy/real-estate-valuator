@@ -11,6 +11,7 @@ const Calculator = props => {
   const ResultContainer = () => (
     <div className="ResultContainer">Estimated Value: {value}</div>
   );
+
   return (
     <div className="Calculator">
       <h1>Calculator</h1>
@@ -177,5 +178,7 @@ const Calculator = props => {
     </div>
   );
 };
+
+
 
 export default Calculator;

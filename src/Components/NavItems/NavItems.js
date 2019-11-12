@@ -10,6 +10,9 @@ const NavItems = props => (
     <NavItem link="/calculator" exact>
       Calculator
     </NavItem>
+    <NavItem link="/map" exact>
+      Map
+    </NavItem>
   </ul>
 );
 
