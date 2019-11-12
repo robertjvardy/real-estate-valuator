@@ -16,6 +16,12 @@ const Calculator = props => {
       <h1>Calculator</h1>
       <Styles>
         <Form
+        initialValues={{ 
+          fireplace: false,
+          pool: false,
+          centralHeating: false,
+          centralCooling: false
+        }}
           onSubmit={async values => {
             axios
               .post("http://localhost:5000/api/", { ...values })
@@ -35,7 +41,7 @@ const Calculator = props => {
                   name="yearBuilt"
                   component="input"
                   type="text"
-                  placeholder="Year Built"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -44,7 +50,7 @@ const Calculator = props => {
                   name="stories"
                   component="input"
                   type="text"
-                  placeholder="Stories"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -53,7 +59,7 @@ const Calculator = props => {
                   name="bedrooms"
                   component="input"
                   type="text"
-                  placeholder="Bedrooms"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -62,7 +68,7 @@ const Calculator = props => {
                   name="fullBathrooms"
                   component="input"
                   type="text"
-                  placeholder="Full Bathrooms"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -71,7 +77,7 @@ const Calculator = props => {
                   name="halfBathrooms"
                   component="input"
                   type="text"
-                  placeholder="Half Bathrooms"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -80,7 +86,7 @@ const Calculator = props => {
                   name="livableSquareFeet"
                   component="input"
                   type="text"
-                  placeholder="Livable Square Feet"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -89,7 +95,7 @@ const Calculator = props => {
                   name="totalSquareFeet"
                   component="input"
                   type="text"
-                  placeholder="Total Square Feet"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -98,7 +104,7 @@ const Calculator = props => {
                   name="garageSquareFeet"
                   component="input"
                   type="text"
-                  placeholder="Garage Square Feet"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -107,7 +113,7 @@ const Calculator = props => {
                   name="fireplace"
                   component="input"
                   type="checkbox"
-                  placeholder="Fireplace"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -116,7 +122,7 @@ const Calculator = props => {
                   name="pool"
                   component="input"
                   type="checkbox"
-                  placeholder="Pool"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -125,7 +131,7 @@ const Calculator = props => {
                   name="centralHeating"
                   component="input"
                   type="checkbox"
-                  placeholder="Central Heating"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -134,7 +140,7 @@ const Calculator = props => {
                   name="centralCooling"
                   component="input"
                   type="checkbox"
-                  placeholder="Central Cooling"
+                  placeholder=""
                 />
               </div>
               <div>
@@ -142,11 +148,12 @@ const Calculator = props => {
                 <Field
                   name="garageType"
                   component="select"
-                  placeholder="Central Cooling"
+                  placeholder=""
                 >
-                  <option value="#ff0000">Attached</option>
-                  <option value="#00ff00">Detatched</option>
-                  <option value="#0000ff">None</option>
+                  <option value="default">Select...</option>
+                  <option value="attached">Attached</option>
+                  <option value="detached">Detatched</option>
+                  <option value="none">None</option>
                 </Field>
               </div>
 
